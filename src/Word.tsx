@@ -54,6 +54,7 @@ const Word = ({ word, secreteWord, listOfWords, setListOfWords, id }: Word) => {
   useEffect(() => {
     document.addEventListener("keypress", handleInputs);
     return () => document.removeEventListener("keypress", handleInputs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentInput]);
   return (
     <section className="flex [&>*]:ml-2 [&>*]:mb-2 uppercase">

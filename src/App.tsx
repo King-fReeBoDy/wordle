@@ -4,7 +4,7 @@ import Header from "./Header";
 import Keyboard from "./Keyboard";
 
 function App() {
-  const [secreteWord, setSecreteWord] = useState("event");
+  const [secreteWord] = useState("event");
   const [listOfWords, setListOfWords] = useState<string[][]>(
     Array(6).fill(["", "", "", "", ""])
   );
