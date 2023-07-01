@@ -9,6 +9,8 @@ interface IKeyboard {
 }
 
 const Keyboard = ({ secreteWord, listOfWords, setListOfWords }: IKeyboard) => {
+  console.log(secreteWord, listOfWords, setListOfWords);
+
   return (
     <>
       <footer className="grid justify-center items-center font-semibold uppercase">
