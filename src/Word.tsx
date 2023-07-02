@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface Word {
   word: string[];
@@ -6,13 +6,27 @@ interface Word {
   listOfWords: string[][];
   setListOfWords: (list: string[][]) => void;
   id: number;
+  index: number;
+  setIndex: (id: number) => void;
+  currentInput: string;
+  setCurrentInput: (word: string) => void;
+  isGameOver: boolean;
+  setIsGameOver: (bool: boolean) => void;
 }
 
-const Word = ({ word, secreteWord, listOfWords, setListOfWords, id }: Word) => {
-  const [currentInput, setCurrentInput] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isGameOver, setIsGameOver] = useState(false);
-
+const Word = ({
+  word,
+  secreteWord,
+  listOfWords,
+  setListOfWords,
+  id,
+  index,
+  setIndex,
+  currentInput,
+  setCurrentInput,
+  isGameOver,
+  setIsGameOver,
+}: Word) => {
   const handleInputs = (event: KeyboardEvent) => {
     if (isGameOver) {
       return;
@@ -71,7 +85,7 @@ const Word = ({ word, secreteWord, listOfWords, setListOfWords, id }: Word) => {
                 : index !== id && !secreteWord.includes(letter) && letter !== ""
                 ? "bg-gray-300"
                 : ""
-            } border-4 px-5 py-3 h-14 w-14 font-bold text-xl`}
+            } text-center py-1 lg:px-3 lg:py-3 border-4 h-10 w-10 lg:h-14 md:w-14 font-bold lg:text-xl`}
           >
             {letter}
           </div>

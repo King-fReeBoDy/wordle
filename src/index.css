@@ -3,10 +3,5 @@
 @tailwind utilities;
 
 * {
-  /* border: 1px solid red; */
   font-family: "fira code";
-}
-
-.nnn {
-  background-color: red;
 }

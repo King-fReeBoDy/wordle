@@ -4,12 +4,28 @@ interface IBody {
   secreteWord: string;
   listOfWords: string[][];
   setListOfWords: (list: string[][]) => void;
+  index: number;
+  setIndex: (id: number) => void;
+  currentInput: string;
+  setCurrentInput: (word: string) => void;
+  isGameOver: boolean;
+  setIsGameOver: (bool: boolean) => void;
 }
 
-const Body = ({ secreteWord, listOfWords, setListOfWords }: IBody) => {
+const Body = ({
+  secreteWord,
+  listOfWords,
+  setListOfWords,
+  index,
+  setIndex,
+  currentInput,
+  setCurrentInput,
+  isGameOver,
+  setIsGameOver,
+}: IBody) => {
   return (
     <>
-      <main className="my-3">
+      <main className="mt-3">
         <section className="grid justify-center items-center">
           {listOfWords.map((word, i) => {
             return (
@@ -20,6 +36,12 @@ const Body = ({ secreteWord, listOfWords, setListOfWords }: IBody) => {
                 secreteWord={secreteWord}
                 listOfWords={listOfWords}
                 setListOfWords={setListOfWords}
+                index={index}
+                setIndex={setIndex}
+                currentInput={currentInput}
+                setCurrentInput={setCurrentInput}
+                isGameOver={isGameOver}
+                setIsGameOver={setIsGameOver}
               />
             );
           })}
